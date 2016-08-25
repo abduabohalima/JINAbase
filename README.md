@@ -1,4 +1,6 @@
-A basic GUI to plot the abundances of VMP stars as part of JINA's VMP stars database project.
+## JINAbase
+
+A basic GUI to plot the abundances of EMP stars as part of JINA's EMP stars database project.
 The GUI gives you several options to view the data.
 
 ## Requirements
@@ -8,7 +10,7 @@ It's recommended to have anaconda installed, in that case use 'conda install pac
 
     wxpython
     traits
-	pandas
+    pandas
 
 The following package needs to be installed as follow for the latest version available,
 
@@ -51,4 +53,3 @@ To plot all available stars for a sample, use Fe for the x and y axes.
 
 - To retrive all information for a star, include only the stars name once with no reference.
 
-# JINAbase
