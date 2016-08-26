@@ -26,17 +26,6 @@ import socket
 import random
 import subprocess
 
-
-#import modules.readsnapshots.readsnapHDF5 as rsHD
-#import modules.readsnapshots.readsnap as rs
-#import modules.readsnapshots.readids as readids
-#import modules.readhalos.readsubf as readsubf
-#import modules.readhalos.RSDataReaderv2 as RSDataReader
-#from modules.brendanlib.grifflib import *
-
-from random import randint
-
-
 class _MPLFigureEditor(Editor):
 
     scrollable  = True
@@ -99,9 +88,9 @@ def read_params(list_name):
     stars = []
     for line in lines:
         stars.append({'name' : line[3],
-                      'teff' : float(line[19]),
-                      'logg' : float(line[20]),
-                      'z'    : float(line[21]),
+                      'teff' : float(line[20]),
+                      'logg' : float(line[21]),
+                      'z'    : float(line[22]),
                       'ref' : line[1]})
 
     return stars

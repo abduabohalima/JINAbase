@@ -298,7 +298,7 @@ class FirstCalc(HasTraits):
         self.y = [str(item) for item in all_data[self.yoptions].values.tolist()]
         self.zx = [str(item) for item in all_data[self.zxoptions].values.tolist()] #list for x-axis element Y in [X/Y]
         self.zy = [str(item) for item in all_data[self.zyoptions].values.tolist()] #list for y-axis element Y in [X/Y]
-        solar = readfile('files/'+self.normoptions+'.txt') #read in solar abundances
+        solar = readfile('files/solar/'+self.normoptions+'.txt') #read in solar abundances
         self.var_ref, self.xback, self.yback = [], [], []
 
         for m in range(len(self.x)):
@@ -469,10 +469,10 @@ class FirstCalc(HasTraits):
         self.xabund, self.yabund, self.output_list, self.criteria_abund = [], [], [], []
         figure = self.main.display_plot
         figure.clear()
-        ax = figure.add_axes([0.14, 0.1, 0.6, 0.8])
+        ax = figure.add_axes([0.1, 0.1, 0.6, 0.8])
         
         if self.legend:
-            col=['r', 'g', 'b', 'orange','y', 'k', 'lightgreen', 'c', 'm', 'crimson', 'fuchsia']*len(self.var_ref)
+            col=['r','b','g','y','m','c','orange','pink','maroon','lightgreen','crimson','fuchsia','darkgray']*len(self.var_ref)
             shape = ['s', '*', '8', 'd', 'o']*len(self.var_ref)
             c, d = 0, 0
             for m in range(len(self.var_ref)):
@@ -740,7 +740,7 @@ class FirstCalc(HasTraits):
             else:
                 n=1
 
-            ax.legend(bbox_to_anchor=(1., 1.01),loc='upper left', ncol = int(n), fontsize=11)
+            ax.legend(bbox_to_anchor=(1, 1.01),loc='upper left', ncol = int(n), fontsize=11)
         	
         if self.yoptions in abundances:
             ax.axhline(0, color='darkgray',linestyle='dashed')
@@ -875,12 +875,11 @@ class FirstCalc(HasTraits):
             ref.append(star['ref'])
         ref = list(set(ref))
         
-        col = ['r', 'g', 'b', 'orange','y', 'k', 'lightgreen', 'c', 'm', 'crimson', 'fuchsia']*len(ref)
+        col=['r','b','g','y','m','c','orange','pink','maroon', 'lightgreen','crimson','fuchsia','darkgray']*len(ref)
         shape = ['s','*','8','D']*len(ref)
         figure = self.main.display_isochrone
         figure.clear()
-        ax = figure.add_axes([0.14, 0.1, 0.6, 0.8])
-        #ax.set_axis_bgcolor('lightgray')
+        ax = figure.add_axes([0.1, 0.1, 0.6, 0.8])
 
         ax.plot(T150, g150, c = 'black', linestyle = '-', label = '[Fe/H] = -1.5')
         ax.plot(T200, g200, c = 'black', linestyle = '-.', label = '[Fe/H] = -2.0')
@@ -910,7 +909,14 @@ class FirstCalc(HasTraits):
         ax.set_ylim(5.5, -0.5)
         ax.set_xlabel('Teff (K)')
         ax.set_ylabel('log g')
-        ax.legend(bbox_to_anchor=(1.44, 1.01),ncol=1,fontsize =11)
+        if self.legend:
+            if len(ref) > 24:
+                n = round(float(len(self.var_ref))/24.,0)
+            else:
+                n=1
+            if n >3:
+                n = 3
+            ax.legend(bbox_to_anchor=(1, 1.01),loc='upper left',ncol=int(n),fontsize =11)
 
         txt1 = 'No. of stars: %d' %c
         if self.num_stars:
@@ -922,10 +928,10 @@ class FirstCalc(HasTraits):
         wx.CallAfter(self.main.display_isochrone.canvas.draw)
 
     def _star_plot_fired(self):
-        solar = readfile('files/'+self.normoptions+'.txt') #read in solar abundances
+        solar = readfile('files/solar/'+self.normoptions+'.txt') #read in solar abundances
         figure = self.main.display_star
         figure.clear()
-        ax = figure.add_axes([0.1, 0.1, 0.7, 0.8]) # set axes for plot
+        ax = figure.add_axes([0.1, 0.1, 0.8, 0.8]) # set axes for plot
         # the median and values per reference
         x_med, y_med, x_all, y_all = [], [], [], []
         var_ref, txt = [],[]
@@ -935,7 +941,7 @@ class FirstCalc(HasTraits):
                 var_ref.append(line[1]) 
                 data = data.append(all_data.iloc[i], ignore_index=True)
         var_ref = list(set(var_ref))
-        col=['r','b','g','y','m','c','orange','lightgreen','crimson','fuchsia','darkgray']*len(var_ref)
+        col=['r','b','g','y','m','c','orange','pink','maroon', 'lightgreen','crimson','fuchsia','darkgray']*len(var_ref)
         shape = ['s','o','H','p']*len(var_ref)
         for k,r in enumerate(var_ref):
             x, y, upperx, uppery = [], [], [], []
@@ -993,7 +999,7 @@ class FirstCalc(HasTraits):
         ax.plot(x_med, y_med,'k+:',label='median') #plotting the median
         ax.minorticks_on() # minor grid on
         ax.grid(which='both', axis='x',linewidth=0.3, color='darkgray', linestyle='--') # minor grid forma
-        ax.legend(bbox_to_anchor=(1, 1.01), loc ='upper left', fontsize=9)
+        ax.legend(bbox_to_anchor=(1, 1.01), loc ='upper left', fontsize=10)
         ax.set_xlim(0,txt[-1][-1]+5)
         if self.star_horfe == '[X/H]':
             ax.set_ylabel('[X/H]', fontsize=14)

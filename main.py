@@ -29,7 +29,7 @@ class ApplicationMain(HasTraits):
                 width = 1280,
                 height = 750,
                 resizable = True,
-                title="VMP stars Abundances GUI"
+                title="JINAbase GUI"
             )
 
     def _display_plot_default(self):
@@ -50,9 +50,9 @@ class ApplicationMain(HasTraits):
 
     def _display_isochrone_default(self):
         """Initialises the display."""
-        figure = Figure(figsize=(5,3), dpi=100)
+        figure = Figure(figsize=(8,4))
         #ax = figure.add_subplot(111)
-        ax = figure.add_axes([0.15, 0.1, 0.8, 0.8])
+        ax = figure.add_axes([0.15, 0.1, 0.6, 0.8])
         #ax = figure.axes[0]
         #ax.set_xlabel('Z')
         #ax.set_ylabel('[X/Fe]')
@@ -66,9 +66,9 @@ class ApplicationMain(HasTraits):
 
     def _display_star_default(self):
         """Initialises the display."""
-        figure = Figure(figsize=(10,5), dpi=100)
+        figure = Figure(figsize=(10,5))
         #ax = figure.add_subplot(111)
-        ax = figure.add_axes([0.15, 0.1, 0.8, 0.8])
+        ax = figure.add_axes([0.15, 0.1, 0.6, 0.8])
         #ax = figure.axes[0]
         #ax.set_xlabel('Z')
         #ax.set_ylabel('[X/Fe]')

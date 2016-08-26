@@ -3,6 +3,11 @@
 A basic GUI to plot the abundances of EMP stars as part of JINA's EMP stars database project.
 The GUI gives you several options to view the data.
 
+## Paper and instructions
+Please read the paper (to come) or cookbook for useful instructions and information. If you find this database and/or GUI useful for your plots and/ or work, please cite the paper.
+There might be some bugs with the database or the GUI, feel free to send suggestions or add issues you encounter.
+This is a community project, help us improve it and keep it up to date. If you think the GUI could be better, help us improve it.
+
 ## Requirements
 
 To get the GUI to work on your device you'll need the following python packages,
@@ -27,23 +32,20 @@ try the following:
 
 ## Information for using the GUI
 
-- IMPORTANT:: Only use 'Show Legend when 'MW Halo' stars not in the main selection,
-or have less than 20 references chosen to plot.
+- The X-axis and Y-axis limits enable you to select a specific range of values.
 
-- The PLot button is available once the references, location, science key and type are selected.
+- The PLot button is available once the references, location, science key ,c-key and type are selected.
 
-- The Reference tab gives you the option to choose which references to plot.
+- The Reference tab gives you the option to choose which references to include in the sample.
 
-- The X-axis and Y-axis limits enable you to select a specific range of values, they can be specified at any time.
-
-- The value beside the Show upper limits tick box is the length of the upper limmits arrow.
+- The value beside the Show upper limits tick box is to set the length of the upper limmits arrow.
 
 - The marker size is to select the size of the scatter points.
 
 - When plotting the isochrones, only the stars shown in the plot tab are used.
 To plot all available stars for a sample, use Fe for the x and y axes.
 
-- For the user defined criteria, to include all values leave the upper and lower limits empty.
+- For the user defined criteria, to include all values leave the upper and lower limits unchanged.
 
 ## How to use the query tab
 
