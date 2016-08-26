@@ -10,7 +10,7 @@ This is a community project, help us improve it and keep it up to date. If you t
 
 ## Requirements
 
-To get the GUI to work on your device you'll need the following python packages,
+To get the GUI to work on your device you'll need the following python packages.
 It's recommended to have anaconda installed, in that case use 'conda install package'.
 
     wxpython
@@ -34,11 +34,11 @@ try the following:
 
 - The X-axis and Y-axis limits enable you to select a specific range of values.
 
-- The PLot button is available once the references, location, science key ,c-key and type are selected.
+- The Plot button is available once the references, location, science key ,c-key, and type are selected.
 
 - The Reference tab gives you the option to choose which references to include in the sample.
 
-- The value beside the Show upper limits tick box is to set the length of the upper limmits arrow.
+- The value beside the Show upper limits tick box is to set the length of the upper limits arrow.
 
 - The marker size is to select the size of the scatter points.
 
@@ -51,7 +51,7 @@ To plot all available stars for a sample, use Fe for the x and y axes.
 
 - This tab enables you to retrieve the information for a list of stars from the database.
 
-- The list including the star names and references must be in this form "star_name_nospaces reference", one entry per line without qoutes.
+- The list including the star names and references must be in this form "star_name_nospaces reference", one entry per line without quotes.
 
-- To retrive all information for a star, include only the stars name once with no reference.
+- To retrieve all information for a star, include only the star name once with no reference.
 
