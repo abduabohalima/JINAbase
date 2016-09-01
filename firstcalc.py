@@ -4,7 +4,7 @@ from Common import *
 ref= list(map(tuple,[line[1:] for line in references[2:]]))
 
 # list of elements from all_data defined in common.py
-elements = list(all_data.columns.values[24:])
+elements = list(all_data.columns.values[20:])
 
 #metallicity list used for relative abundance calculation
 Z = [str(item) for item in all_data['Fe'].values.tolist()]
@@ -207,7 +207,7 @@ class FirstCalc(HasTraits):
         self.sample_xlo = False
         self.sample_yup = False
         self.sample_ylo = False
-        self.ref = True
+        self.ref = True #to update the reference list
         
 
     def _yoptions_changed(self):
@@ -216,7 +216,7 @@ class FirstCalc(HasTraits):
         self.sample_xlo = False
         self.sample_yup = False
         self.sample_ylo = False
-        self.ref = True
+        self.ref = True #to update the reference list
 
     def _xhorfe_changed(self):
         self.sample_xup = False
@@ -243,28 +243,28 @@ class FirstCalc(HasTraits):
         self.sample_xlo = False
         self.sample_yup = False
         self.sample_ylo = False
-        self.ref = True
+        #self.ref = True
 
     def _sci_list_changed(self):
         self.sample_xup = False
         self.sample_xlo = False
         self.sample_yup = False
         self.sample_ylo = False
-        self.ref = True
+        #self.ref = True
 
     def _star_type_changed(self):
         self.sample_xup = False
         self.sample_xlo = False
         self.sample_yup = False
         self.sample_ylo = False
-        self.ref = True
+        #self.ref = True
 
     def _crich_list_changed(self):
         self.sample_xup = False
         self.sample_xlo = False
         self.sample_yup = False
         self.sample_ylo = False
-        self.ref = True
+        #self.ref = True
     	
     def _ref_sel_all_fired(self):
         self.ref_list = [item[0] for item in ref]
