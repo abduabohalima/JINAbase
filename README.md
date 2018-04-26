@@ -1,4 +1,7 @@
-## JINAbase
+## JINAbase webapp
+The database is now hosted on a webapp at [jinabase.pythonanywhere.com](http://jinabase.pythonanywhere.com/), please use that instead of this gui.
+
+## JINAbase GUI
 
 A basic GUI to plot the abundances of EMP stars as part of JINA's EMP stars database project.
 The GUI gives you several options to view the data.
